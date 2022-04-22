@@ -1,5 +1,12 @@
 {
   "sections": {
+    "main-list-collections": {
+      "type": "main-list-collections",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 4
+      }
+    },
     "main-collection-product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -20,6 +27,7 @@
     }
   },
   "order": [
+    "main-list-collections",
     "main-collection-product-grid"
   ]
 }
