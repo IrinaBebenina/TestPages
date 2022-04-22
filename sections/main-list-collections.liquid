@@ -1,12 +1,27 @@
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+
 <div class="page-width">
-  <h1 class="title title--primary">{{ section.settings.title | escape }}</h1>
+  <h1 class="title">{{ section.settings.title | escape }}</h1>
   <ul class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
     {%- for collection in collections -%}
       <li class="collection-list__item grid__item">
-          {{ collection.title }}
-          {% for product in collection.products %}
-              <p>{{ product.title }}</p>
+          <h2 class="collection-title">{{ collection.title }}</h2>
+          <div>
+            <ul class="products-list">
+              {% for product in collection.products %}
+              <li class="product-item">
+                <img class="product-image" srcset="{{ product.featured_image | image_url: width: 500 }}" alt="{{ product.title }}" loading="lazy">
+                <div class="product-information">
+                  <a class="product-title" href="{{ product.url }}">{{ product.title }}</a>
+                  <div class="product-price">
+                    <p class="product-price__previous">{{ product.compare_at_price | money }}</p>
+                    <p class="product-price__current">{{ product.price | money }}</p>
+                  </div>
+                </div>
+              </li>
           {% endfor %}
+            </ul>
+          </div>
       </li>
     {%- endfor -%}
   </ul>

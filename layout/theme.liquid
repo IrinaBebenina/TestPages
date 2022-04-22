@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		{{ content_for_header }}
+		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
-		{% section 'header' %}
 		<main>
 			{{ content_for_layout }}
 		</main>
