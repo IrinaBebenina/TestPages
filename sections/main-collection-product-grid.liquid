@@ -5,7 +5,7 @@
 <div class="section-{{ section.id }}-padding">
     <div class="product-grid-container" id="ProductGridContainer">
           <div class="collection">
-            <ul id="product-grid" class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop">
+            <ul id="product-grid" data-id="{{ section.id }}" class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop">
               {%- for product in collection.products -%}
                 <li class="grid__item">
                   {% render 'card-product', 
