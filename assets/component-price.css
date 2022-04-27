@@ -1,0 +1,9 @@
+.price__container {
+    display: flex;
+    gap: 5px;
+}
+
+.price__sale {
+    text-decoration: line-through;
+    color: grey;
+}

@@ -1,0 +1,36 @@
+.card__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card__information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.grid__item {
+    max-width: 500px;
+}
+
+.card {
+    display: flex;
+    gap: 20px;
+}
+
+.media {
+    max-width: 500px;
+}
+
+.media img {
+    width: 100%;
+}
+
+.card__details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}

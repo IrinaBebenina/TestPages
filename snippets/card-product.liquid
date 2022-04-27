@@ -1,68 +1,21 @@
-{%- if product and product != empty -%}
-  <div class="card-wrapper underline-links-hover">
-    <div class="card">
-      <div class="card__inner">
-        {%- if product.featured_media -%}
-          <div class="card__media">
-            <div class="media media--transparent media--hover-effect">
-              <img class="product-image" srcset="{{ product.featured_media | image_url: width: 500 }}" alt="{{ product.featured_media.alt | escape }}" loading="lazy">
-            </div>
-          </div>
-        {%- endif -%}
-        <div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              <a href="{{ product.url }}" class="full-unstyled-link">
-                {{ product.title | escape }}
-              </a>
-            </h3>
-          </div>
-        </div>
+<div class="card-wrapper">
+  <div class="card">
+    <div class="card__inner">
+      <div class="card__media">
+          <img class="product-image" srcset="{{ card_product.featured_media | image_url: width: 500 }}" alt="{{ card_product.featured_media.alt | escape }}" loading="lazy">
       </div>
       <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading">
-            <a href="{{ product.url }}" class="full-unstyled-link">
-              {{ product.title | escape }}
+            <a href="{{ card_product.url }}" class="full-unstyled-link">
+              {{ card_product.title | escape }}
             </a>
           </h3>
-          <div class="card-information">
-            {%- if show_vendor -%}
-              <div class="caption-with-letter-spacing light">{{ product.vendor }}</div>
-            {%- endif -%}
+          <div class="card__price">
+            {% render 'price', product: card_product %}
           </div>
         </div>
       </div>
     </div>
   </div>
-{%- else -%}
-  <div class="card-wrapper underline-links-hover">
-    <div class="card">
-      <div class="card__inner">
-        <div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              <a role="link" aria-disabled="true" class="full-unstyled-link">
-                {{ 'onboarding.product_title' | t }}
-              </a>
-            </h3>
-          </div>
-        </div>
-      </div>
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading">
-            <a role="link" aria-disabled="true" class="full-unstyled-link">
-              {{ 'onboarding.product_title' | t }}
-            </a>
-          </h3>
-          <div class="card-information">
-            {%- if show_vendor -%}
-              <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
-            {%- endif -%}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-{%- endif -%}
+</div>

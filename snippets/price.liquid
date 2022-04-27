@@ -1,0 +1,10 @@
+<div class="price">
+    <div class="price__container">
+        <span class="price__sale">
+            {{ product.compare_at_price | money }}
+        </span>
+        <span class="price__regular">
+            {{ product.price | money }}
+        </span>
+    </div>
+</div>

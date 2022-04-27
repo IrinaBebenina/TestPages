@@ -1,23 +1,26 @@
-<div class="section-{{ section.id }}-padding">
-  
-  <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
-    
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
 
+<div class="section-{{ section.id }}-padding">
     <div class="product-grid-container" id="ProductGridContainer">
-      
           <div class="collection">
-            <div class="loading-overlay gradient"></div>
-    
-            <ul id="product-grid" class="grid product-grid">
+            <ul id="product-grid" class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop">
               {%- for product in collection.products -%}
                 <li class="grid__item">
-                  {% render 'card-product' %}
+                  {% render 'card-product', 
+                  card_product: product,
+                  media_aspect_ratio: section.settings.image_ratio,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_vendor: section.settings.show_vendor,
+                  show_rating: section.settings.show_rating,
+                  show_quick_add: section.settings.enable_quick_add,
+                  section_id: section.id %}
                 </li>
               {%- endfor -%}
             </ul>
           </div>
     </div>
-  </div>
 </div>
 
 
@@ -39,9 +42,9 @@
       "type": "range",
       "id": "columns_desktop",
       "min": 1,
-      "max": 5,
+      "max": 4,
       "step": 1,
-      "default": 4,
+      "default": 2,
       "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
     },
     {

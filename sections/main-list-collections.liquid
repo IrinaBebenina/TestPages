@@ -1,15 +1,17 @@
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width">
   <h1 class="title title--primary">{{ section.settings.title | escape }}</h1>
   <ul class="collection-list grid">
     {%- for collection in collections -%}
-      <li class="collection-list__item grid__item">
-        {% render 'card-collection' %}
+      <li class="collection-list__item">
+        {% render 'card-collection', card_collection: collection, media_aspect_ratio: section.settings.image_ratio, columns: 3 %}
       </li>
     {%- endfor -%}
   </ul>
 </div>
+
 {% schema %}
 {
   "name": "t:sections.main-list-collections.name",

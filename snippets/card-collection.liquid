@@ -1,51 +1,28 @@
 <div class="card-wrapper animate-arrow">
-  <div class="card">
-    <div class="card__inner">
-      {%- if collection.featured_image -%}
+  <a class="card" href="{{ card_collection.url }}">
+      {%- if card_collection.image -%}
         <div class="card__media">
-          <div class="media media--transparent media--hover-effect">
-            <img srcset="{{ collection.featured_image | image_url: width: 1500 }}" alt="{{ collection.title | escape }}" loading="lazy" class="collection-image">
+          <div class="media">
+            <img
+              srcset="{{ card_collection.image | image_url: width: 1500 }}"
+              alt="{{ card_collection.title | escape }}"
+              loading="lazy"
+              class="card-image"
+            >
           </div>
         </div>
       {%- endif -%}
       <div class="card__content">        
-        <div class="card__information">
+        <div class="card__details">
           <h3 class="card__heading">
-            <a class="full-unstyled-link">
-              {%- if collection.title != blank -%}
-                {{- collection.title | escape -}}
-              {%- else -%}
-                {{ 'onboarding.collection_title' | t }}
-              {%- endif -%}
-            </a>
+              {{- card_collection.title | escape -}}
           </h3>
-          {%- if collection.description != blank -%}
+          {%- if card_collection.description != blank -%}
             <p class="card__caption">
-              {{- collection.description | strip_html | truncatewords: 12 -}}
+              {{- card_collection.description | strip_html | truncatewords: 12 -}}<span class="icon-wrap">&nbsp;</span>
             </p>
           {%- endif -%}
         </div>   
-      </div>
-    </div>
-    {% if settings.card_style == 'card' or collection.featured_image %} 
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading">
-            <a href="{{ collection.url }}" class="full-unstyled-link">
-              {%- if collection.title != blank -%}
-                {{- collection.title | escape -}}
-              {%- else -%}
-                {{ 'onboarding.collection_title' | t }}
-              {%- endif -%}
-            </a>
-          </h3>
-          {%- if collection.featured_image == nil and collection.description != blank -%}
-            <p class="card__caption">
-              {{- collection.description | strip_html | truncatewords: 12 -}}
-            </p>
-          {%- endif -%}
-        </div>
-      </div>
-    {% endif %} 
-  </div>
+      </div> 
+  </a>
 </div>
