@@ -1,17 +1,23 @@
 <div class="section-{{ section.id }}-padding">
-  {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
-    <div class="product-grid-container{% if section.settings.filter_type == 'vertical' and section.settings.collapse_on_larger_devices %} product-grid-container-vertical{% endif %}" id="ProductGridContainer">
+  
+  <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
+    
+
+    <div class="product-grid-container" id="ProductGridContainer">
+      
           <div class="collection">
-            {{ collection.title }}
-            <ul id="product-grid">
+            <div class="loading-overlay gradient"></div>
+    
+            <ul id="product-grid" class="grid product-grid">
               {%- for product in collection.products -%}
                 <li class="grid__item">
-                  {% section 'main-product' %}
+                  {% render 'card-product' %}
                 </li>
               {%- endfor -%}
             </ul>
           </div>
     </div>
+  </div>
 </div>
 
 
