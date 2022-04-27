@@ -5,6 +5,9 @@
           <img class="product-image" srcset="{{ card_product.featured_media | image_url: width: 500 }}" alt="{{ card_product.featured_media.alt | escape }}" loading="lazy">
       </div>
       <div class="card__content">
+        {%- if show_vendor -%}
+              <div class="card__vendor">{{ product.vendor }}</div>
+        {%- endif -%}
         <div class="card__information">
           <h3 class="card__heading">
             <a href="{{ card_product.url }}" class="full-unstyled-link">
