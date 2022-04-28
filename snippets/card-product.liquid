@@ -2,7 +2,11 @@
   <div class="card">
     <div class="card__inner">
       <div class="card__media">
-          <img class="product-image" srcset="{{ card_product.featured_media | image_url: width: 500 }}" alt="{{ card_product.featured_media.alt | escape }}" loading="lazy">
+          <img 
+          class="product-image" 
+          srcset="{{ card_product.featured_media | image_url: width: 500 }}"
+          alt="{{ card_product.featured_media.alt | escape }}" 
+          loading="lazy">
       </div>
       <div class="card__content">
         {%- if show_vendor -%}
