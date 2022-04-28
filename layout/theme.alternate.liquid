@@ -3,9 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		{{ content_for_header }}
-	  	{% if settings.vertical-header %}
-      		{{ 'base-flex.css' | asset_url | stylesheet_tag }}
-      	{%- endif -%}
+      	{{ 'base-flex.css' | asset_url | stylesheet_tag }}
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
