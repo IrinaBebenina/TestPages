@@ -7,7 +7,7 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-  .product-grid {
+  .grid--{{ section.settings.columns_desktop }}-col-desktop {
     grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
   }
 {%- endstyle -%}
