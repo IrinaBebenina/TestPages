@@ -4,18 +4,18 @@
 		<meta charset="utf-8">
 		{{ content_for_header }}
 	  
-		  
+		  {% style %}
+              body main {
+                  display: flex;
+              }
+            {% endstyle %}
 	  
 
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
 		<main>
-            {% style %}
-              main {
-                  display: flex;
-              }
-            {% endstyle %}
+            
 			{% section 'header' %}
 			{{ content_for_layout }}
 		</main>
