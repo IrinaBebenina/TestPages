@@ -1,8 +1,14 @@
-<header>
+{%- if settings.vertical-header -%}
+    {% layout 'theme.alternate' %}
+{%- endif -%}
+
+{{ 'header.css' | asset_url | stylesheet_tag }}
+
+<header class="header">
     <nav>
         <ul>
             <li>Collections</li>
-            <li>Products</li>
         </ul>
     </nav>
+    <div class="header__logo">Logo</div>
 </header>

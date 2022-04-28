@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{{ content_for_header }}
+
+		{%- liquid
+			assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+		  %}
+	  
+		  {% style %}
+	  
+			body {
+			  background-color: black;
+			}
+	  
+		  {% endstyle %}
+	  
+
+		{{ 'base.css' | asset_url | stylesheet_tag }}
+	</head>	
+	<body>
+		<main>
+			{% section 'header' %}
+			{{ content_for_layout }}
+		</main>
+	</body>
+<html>

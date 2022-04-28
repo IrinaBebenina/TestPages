@@ -3,7 +3,11 @@
       "product-grid": {
         "type": "main-collection-product-grid",
         "settings": {
-          "columns_desktop": 2
+          "columns_desktop": 2,
+          "show_vendor": false,
+          "enable_sorting": true,
+          "padding_top": 28,
+          "padding_bottom": 28
         }
       }
     },

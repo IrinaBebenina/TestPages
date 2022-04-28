@@ -280,6 +280,9 @@
       "layout": {
         "name": "Layout",
         "settings": {
+          "vertical-header": {
+            "label": "Vertical header"
+          },
           "page_width": {
             "label": "Page width"
           },
