@@ -4,17 +4,10 @@
 		<meta charset="utf-8">
 		{{ content_for_header }}
 	  
-		  {% style %}
-              body main {
-                  display: flex;
-              }
-            {% endstyle %}
-	  
-
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
-		<main>
+		<main style="display: flex;">
             
 			{% section 'header' %}
 			{{ content_for_layout }}
