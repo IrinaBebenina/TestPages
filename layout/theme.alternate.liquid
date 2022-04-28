@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		{{ content_for_header }}
-	  
+	  	{% if settings.vertical-header %}
+      		{% style %}
+			main {
+				display: flex;
+			}
+		  {% endstyle %}
+      	{%- endif -%}
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
-		<main style="display: flex;">
+		<main>
           <div>{% section 'header' %}</div>
 			
           <div>{{ content_for_layout }}</div>
