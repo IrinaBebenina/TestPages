@@ -4,11 +4,7 @@
 		<meta charset="utf-8">
 		{{ content_for_header }}
 	  	{% if settings.vertical-header %}
-      		{% style %}
-			main {
-				display: flex;
-			}
-		  {% endstyle %}
+      		{{ 'base-flex.css' | asset_url | stylesheet_tag }}
       	{%- endif -%}
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
