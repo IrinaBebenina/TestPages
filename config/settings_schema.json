@@ -100,6 +100,23 @@
     "name": "t:settings_schema.layout.name",
     "settings": [
       {
+        "type": "select",
+        "id": "header_position",
+        "options": [
+          {
+            "value": "top",
+            "label": "t:sections.header.settings.header_position.options__1.label"
+          },
+          {
+            "value": "left",
+            "label": "t:sections.header.settings.header_position.options__2.label"
+          }
+        ],
+        "default": "top",
+        "label": "t:sections.header.settings.header_position.label",
+        "info": "t:sections.header.settings.header_position.info"
+      },
+      {
         "type": "range",
         "id": "page_width",
         "min": 1000,

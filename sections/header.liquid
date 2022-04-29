@@ -1,14 +1,5 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-{%- if section.settings.header_position.options__2 -%}
-    {% render 'logo' %}
-    {% style %}
-        main {
-            display: flex;
-        }
-    {% endstyle %}
-{%- endif -%}
-
     <header class="header">
         {% render 'logo' %}
         <nav>
@@ -26,23 +17,6 @@
   "name": "t:sections.header.name",
   "class": "section-header",
   "settings": [
-    {
-      "type": "select",
-      "id": "header_position",
-      "options": [
-        {
-          "value": "top",
-          "label": "t:sections.header.settings.header_position.options__1.label"
-        },
-        {
-          "value": "left",
-          "label": "t:sections.header.settings.header_position.options__2.label"
-        }
-      ],
-      "default": "top",
-      "label": "t:sections.header.settings.header_position.label",
-      "info": "t:sections.header.settings.header_position.info"
-    },
     {
       "type": "select",
       "id": "logo_position",
