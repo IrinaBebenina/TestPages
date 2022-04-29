@@ -4,8 +4,10 @@
     justify-content: flex-start;
     gap: 20px;
     padding: 10px;
-    height: 100vh;
+    height: 100%;
     max-width: 150px;
+    position: sticky;
+    top: 0;
 }
 
 header nav {
