@@ -129,16 +129,7 @@
 				flex-direction: column;
 			}*/
 	  
-		  {% endstyle %}
-
-		  {%- if settings.header_position.options__2 -%}
-              {% style %}
-			  main {
-				display: flex;
-			  }
-			  {% endstyle %}
-          {%- endif -%}
-	  
+		  {% endstyle %}	  
 
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
