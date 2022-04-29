@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    height: 100vh;
+}
+
+header nav {
+    width: auto;
+}
+
+.header__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
