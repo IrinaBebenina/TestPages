@@ -135,6 +135,7 @@
 			{% style %}
 				main {
 					display: flex;
+					height: 100%;
 				}
 			{% endstyle %}
 		  {%- endif -%}
@@ -142,7 +143,7 @@
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
-		
+
 		<main>
 			{% section 'header' %}
 			{{ content_for_layout }}
