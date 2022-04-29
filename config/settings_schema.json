@@ -100,12 +100,6 @@
     "name": "t:settings_schema.layout.name",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "vertical-header",
-        "default": false,
-        "label": "t:settings_schema.layout.settings.vertical-header.label"
-      },
-      {
         "type": "range",
         "id": "page_width",
         "min": 1000,

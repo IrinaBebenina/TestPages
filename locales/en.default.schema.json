@@ -855,6 +855,16 @@
     "header": {
       "name": "Header",
       "settings": {
+        "header_position": {
+          "label": "Desktop header position",
+          "options__1": {
+            "label": "Top"
+          },
+          "options__2": {
+            "label": "Left"
+          },
+          "info": "Position is automatically optimized for mobile."
+        },
         "logo": {
           "label": "Logo image"
         },

@@ -4,13 +4,11 @@
 		<meta charset="utf-8">
 		{{ content_for_header }}
       	{{ 'base-flex.css' | asset_url | stylesheet_tag }}
-		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
 		<main>
-          <div>{% section 'header' %}</div>
-			
-          <div>{{ content_for_layout }}</div>
+			{% section 'header' %}
+			{{ content_for_layout }}
 		</main>
 	</body>
 <html>

@@ -2,7 +2,6 @@
   "sections": {
     "main-list-collections": {
       "type": "main-list-collections",
-      "layout": "theme.alternate.liquid",
       "settings": {
         "products_per_page": 12,
         "columns_desktop": 4

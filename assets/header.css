@@ -1,5 +1,17 @@
 .header {
     background-color: grey;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+header nav {
+    display: block;
+    width: 400px;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }
