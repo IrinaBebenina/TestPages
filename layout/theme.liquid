@@ -113,9 +113,9 @@
 			}
 	  
 			body {
-			  display: grid;
+			  /*display: grid;
 			  grid-template-rows: auto auto 1fr auto;
-			  grid-template-columns: 100%;
+			  grid-template-columns: 100%;*/
 			  min-height: 100%;
 			  margin: 0;
 			  font-size: 1.5rem;
@@ -124,8 +124,20 @@
 			  font-style: var(--font-body-style);
 			  font-weight: var(--font-body-weight);
 			}
+			/*main {
+				display: flex;
+				flex-direction: column;
+			}*/
 	  
 		  {% endstyle %}
+
+		  {%- if settings.header_position.options__2 -%}
+              {% style %}
+			  main {
+				display: flex;
+			  }
+			  {% endstyle %}
+          {%- endif -%}
 	  
 
 		{{ 'base.css' | asset_url | stylesheet_tag }}

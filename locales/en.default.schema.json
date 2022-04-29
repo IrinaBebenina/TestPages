@@ -875,13 +875,10 @@
         "logo_position": {
           "label": "Desktop logo position",
           "options__1": {
-            "label": "Middle left"
+            "label": "Left"
           },
           "options__2": {
-            "label": "Top left"
-          },
-          "options__3": {
-            "label": "Top center"
+            "label": "Right"
           },
           "info": "Position is automatically optimized for mobile."
         },
