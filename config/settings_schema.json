@@ -117,6 +117,23 @@
         "info": "t:sections.header.settings.header_position.info"
       },
       {
+        "type": "select",
+        "id": "logo_position",
+        "options": [
+          {
+            "value": "inside_header",
+            "label": "t:sections.header.settings.logo_position.options__1.label"
+          },
+          {
+            "value": "outside_header",
+            "label": "t:sections.header.settings.logo_position.options__2.label"
+          }
+        ],
+        "default": "inside_header",
+        "label": "t:sections.header.settings.logo_position.label",
+        "info": "t:sections.header.settings.logo_position.info"
+      },
+      {
         "type": "range",
         "id": "page_width",
         "min": 1000,

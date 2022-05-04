@@ -147,8 +147,19 @@
 		<main>
 			{{ content_for_layout }}
 		</main>
-		{%- if settings.header_position == 'left' and section.settings.logo_position == 'right' -%}
+		{%- if settings.header_position == 'left' and settings.logo_position == 'outside_header' -%}
 			{% render 'logo' %}
+			{% style %}
+                 main ~ .logo-container {
+                    position: sticky;
+                    height: 100vh;
+                    top: 0;
+                    right: 0;
+                    padding: 10px;
+                    background-color: grey;
+                    writing-mode: tb-lr;
+                  }
+            {% endstyle %}
 		{%- endif -%}
 	</body>
 <html>
