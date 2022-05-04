@@ -6,11 +6,8 @@
 
     <header class="header">
         {% render 'logo' %}
-        {%- if section.settings.logo_position == 'right' -%}
+        {%- if settings.header_position == 'top' and section.settings.logo_position == 'right' -%}
           {% style %}
-            .header {
-              background-color: red;
-            }
             .logo-container {
               order: 1;
             }
