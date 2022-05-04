@@ -1,11 +1,12 @@
-{%- if settings.header_position == 'left' -%}
-  {{ 'header-vertical.css' | asset_url | stylesheet_tag }}
-{%- else -%}
-  {{ 'header.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
+
 
     <header class="header">
         {% render 'logo' %}
+        {%- if settings.header_position == 'left' -%}
+          {{ 'header-vertical.css' | asset_url | stylesheet_tag }}
+        {%- else -%}
+          {{ 'header.css' | asset_url | stylesheet_tag }}
+        {%- endif -%}
         {%- if settings.header_position == 'top' and section.settings.logo_position == 'right' -%}
           {% style %}
             .logo-container {
@@ -23,6 +24,7 @@
             }
           {% endstyle %}
 		    {%- endif -%}
+        
         <nav>
             <ul class="header__menu">
                 <li>Home</li>
