@@ -15,11 +15,8 @@
         {%- endif -%}
         {%- if settings.header_position == 'left' and section.settings.logo_position == 'right' -%}
           {% style %}
-            .logo-container {
-              position: sticky;
-              height: 100vh;
-              top: 0;
-              right: 0;
+            .header .logo-container {
+              display: none;
             }
           {% endstyle %}
 		    {%- endif -%}
