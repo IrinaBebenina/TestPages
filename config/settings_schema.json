@@ -11,6 +11,23 @@
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
+        "type": "select",
+        "id": "logo_position",
+        "options": [
+          {
+            "value": "Left",
+            "label": "t:sections.header.settings.logo_position.options__1.label"
+          },
+          {
+            "value": "Right",
+            "label": "t:sections.header.settings.logo_position.options__2.label"
+          }
+        ],
+        "default": "Left",
+        "label": "t:sections.header.settings.logo_position.label",
+        "info": "t:sections.header.settings.logo_position.info"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
       },
