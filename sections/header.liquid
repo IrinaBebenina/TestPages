@@ -105,11 +105,32 @@
       "settings": [
         {
           "id": "navigation",
-          "type": "textarea",
+          "type": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "cart",
+      "name": "Cart",
+      "settings": [
+        {
+          "id": "cart",
+          "type": "text",
           "label": "Text"
         }
       ]
     }
-  ]
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "logo"
+      },
+      {
+        "type": "navigation"
+      }
+    ]
+  }
 }
 {% endschema %}

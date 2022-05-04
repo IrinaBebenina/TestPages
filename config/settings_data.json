@@ -116,7 +116,19 @@
                 "heading": "Navigation menu",
                 "menu": "header"
               }
-            }
+            },
+            "cart": {
+              "type": "cart",
+              "settings": {
+                "heading": "Cart",
+                "menu": "header"
+              }
+            },
+            "block_order": [
+              "logo",
+              "navigation",
+              "cart"
+            ]
           }
         }
       }
