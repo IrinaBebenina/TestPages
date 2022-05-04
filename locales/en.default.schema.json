@@ -856,12 +856,21 @@
       "name": "Header",
       "settings": {
         "header_position": {
-          "label": "Desktop header position",
+          "label": "Desktop header type",
           "options__1": {
-            "label": "Top"
+            "label": "Horizontal header"
           },
           "options__2": {
-            "label": "Left"
+            "label": "Vertical header, top content"
+          },
+          "options__3": {
+            "label": "Vertical header, stretched content"
+          },
+          "options__4": {
+            "label": "Vertical header, right top logo"
+          },
+          "options__5": {
+            "label": "Vertical header, right middle logo"
           },
           "info": "Position is automatically optimized for mobile."
         },
@@ -871,16 +880,6 @@
         "logo_width": {
           "unit": "px",
           "label": "Custom logo width"
-        },
-        "logo_position": {
-          "label": "Desktop logo position",
-          "options__1": {
-            "label": "left"
-          },
-          "options__2": {
-            "label": "right"
-          },
-          "info": "Position is automatically optimized for mobile."
         },
         "menu": {
           "label": "Menu"
