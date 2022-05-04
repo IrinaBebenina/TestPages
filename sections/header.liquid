@@ -4,8 +4,6 @@
   {{ 'header.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
-
-
     <header class="header">
         {% render 'logo' %}
         {%- if section.settings.logo_position == 'right' -%}
@@ -35,11 +33,11 @@
       "id": "logo_position",
       "options": [
         {
-          "value": "Left",
+          "value": "left",
           "label": "t:sections.header.settings.logo_position.options__1.label"
         },
         {
-          "value": "Right",
+          "value": "right",
           "label": "t:sections.header.settings.logo_position.options__2.label"
         }
       ],
