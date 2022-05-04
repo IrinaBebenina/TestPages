@@ -134,7 +134,8 @@
 		  {%- if settings.header_position == 'left' -%}
 			{% style %}
 				body {
-					display: flex;
+					display: grid;
+					grid-template-columns: auto auto auto;
 					/*height: 100%;*/
 				}
 			{% endstyle %}
