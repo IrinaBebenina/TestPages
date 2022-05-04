@@ -147,5 +147,8 @@
 		<main>
 			{{ content_for_layout }}
 		</main>
+		{%- if settings.header_position == 'left' -%}
+			{% render 'logo' %}
+		{%- endif -%}
 	</body>
 <html>

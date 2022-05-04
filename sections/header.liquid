@@ -4,7 +4,24 @@
   {{ 'header.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
-{{ 'header.css' | asset_url | stylesheet_tag }}
+{%- if settings.header_position == 'left' and section.settings.logo_position == 'right' -%}
+  {% style %}
+    .logo-container {
+      position: sticky;
+      height: 100vh;
+      top: 0;
+      right: 0;
+    }
+  {% endstyle %}
+{%- endif -%}
+
+{%- if settings.header_position == 'top' and section.settings.logo_position == 'right' -%}
+  {% style %}
+    .logo-container {
+      order: 1;
+    }
+  {% endstyle %}
+{%- endif -%}
 
     <header class="header">
         {% render 'logo' %}
