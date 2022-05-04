@@ -202,6 +202,7 @@
         "header": {
           "type": "header",
           "settings": {
+            "logo_position": "left"
           }
         }
       }
