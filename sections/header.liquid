@@ -7,6 +7,7 @@
         {%- else -%}
           {{ 'header.css' | asset_url | stylesheet_tag }}
         {%- endif -%}
+        {% comment %}
         {%- if settings.header_position == 'top' and section.settings.logo_position == 'right' -%}
           {% style %}
             .logo-container {
@@ -24,7 +25,7 @@
             }
           {% endstyle %}
 		    {%- endif -%}
-        
+        {% endcomment %}
         <nav>
             <ul class="header__menu">
                 <li>Home</li>
