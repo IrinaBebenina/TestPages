@@ -147,6 +147,7 @@
 		<main>
 			{{ content_for_layout }}
 		</main>
+      	{% render 'logo' %}
 		{%- if settings.header_position == 'left' and section.settings.logo_position == 'right' -%}
 			{% render 'logo' %}
 			{% style %}
