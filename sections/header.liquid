@@ -5,11 +5,33 @@
 {%- endif -%}
 
     <header class="header">
+      {% for block in section.blocks %}  
+        {% case block.type %}
+    
+          {% when 'logo' %} 
+            <div class="logo-container" {{ block.shopify_attributes }}>
+              {% render 'logo' %}
+            </div> 
+      
+          {% when 'navigation' %}
+            <nav {{ block.shopify_attributes }}>
+              <ul class="header__menu">
+                  <li>Home</li>
+                  <li>Catalog</li>
+                  <li>Contact</li>
+              </ul>
+            </nav>
+
+          {% when 'cart' %}
+            <div class="cart">Cart</div>
+        {% endcase %} 
+      {% endfor %}
+        {% comment %}
         {% render 'logo' %}
         {%- if settings.header_position == 'top' and section.settings.logo_position == 'right' -%}
           {% style %}
             .logo-container {
-              order: 1;
+              order: 1; 
             }
           {% endstyle %}
         {%- endif -%}
@@ -34,6 +56,7 @@
             </ul>
         </nav>
         <div class="cart">Cart</div>
+        {% endcomment %}
     </header>
 
 {% schema %}
@@ -57,6 +80,35 @@
       "default": "left",
       "label": "t:sections.header.settings.logo_position.label",
       "info": "t:sections.header.settings.logo_position.info"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "id": "logourl",
+          "type": "url",
+          "label": "Logo url"
+        },
+        {
+          "id": "logotext",
+          "type": "text",
+          "label": "Logo text"
+        }
+      ]
+    },
+    {
+      "type": "navigation",
+      "name": "Navigation menu",
+      "settings": [
+        {
+          "id": "navigation",
+          "type": "textarea",
+          "label": "Text"
+        }
+      ]
     }
   ]
 }
