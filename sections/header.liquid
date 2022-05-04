@@ -5,28 +5,6 @@
 {%- endif -%}
 
     <header class="header">
-      {% for block in section.blocks %}  
-        {% case block.type %}
-    
-          {% when 'logo' %} 
-            <div class="logo-container" {{ block.shopify_attributes }}>
-              {% render 'logo' %}
-            </div> 
-      
-          {% when 'navigation' %}
-            <nav {{ block.shopify_attributes }}>
-              <ul class="header__menu">
-                  <li>Home</li>
-                  <li>Catalog</li>
-                  <li>Contact</li>
-              </ul>
-            </nav>
-
-          {% when 'cart' %}
-            <div class="cart">Cart</div>
-        {% endcase %} 
-      {% endfor %}
-      {% comment %}
         {% render 'logo' %}
         {%- if settings.header_position == 'top' and section.settings.logo_position == 'right' -%}
           {% style %}
@@ -37,18 +15,17 @@
         {%- endif -%}
         {%- if settings.header_position == 'left' and section.settings.logo_position == 'right' -%}
           {% style %}
-				body .logo-container {
-				position: sticky;
-				height: 100vh;
-				top: 0;
-				right: 0;
-				padding: 10px;
-				background-color: grey;
-				writing-mode: tb-lr;
-				}
-          	{% endstyle %}
+            body .logo-container {
+            position: sticky;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: grey;
+            writing-mode: tb-lr;
+            }
+          {% endstyle %}
 		    {%- endif -%}
-      {% endcomment %}
         <nav>
             <ul class="header__menu">
                 <li>Home</li>
