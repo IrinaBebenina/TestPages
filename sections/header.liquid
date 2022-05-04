@@ -15,14 +15,14 @@
         {%- endif -%}
         {%- if settings.header_position == 'left' and section.settings.logo_position == 'right' -%}
           {% style %}
-            body .logo-container {
-            position: sticky;
-            height: 100vh;
-            top: 0;
-            right: 0;
-            padding: 10px;
-            background-color: grey;
-            writing-mode: tb-lr;
+            .logo-container {
+              position: sticky;
+              height: 100vh;
+              top: 0;
+              right: 0;
+              padding: 10px;
+              background-color: grey;
+              writing-mode: tb-lr;
             }
           {% endstyle %}
 		    {%- endif -%}
