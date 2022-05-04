@@ -133,9 +133,9 @@
 		  
 		  {%- if settings.header_position == 'left' -%}
 			{% style %}
-				main {
+				body {
 					display: flex;
-					height: 100%;
+					/*height: 100%;*/
 				}
 			{% endstyle %}
 		  {%- endif -%}
@@ -143,9 +143,8 @@
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
-
+		{% section 'header' %}
 		<main>
-			{% section 'header' %}
 			{{ content_for_layout }}
 		</main>
 	</body>

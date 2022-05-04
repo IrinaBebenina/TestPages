@@ -13,3 +13,8 @@ a {
     text-decoration: none;
     color: #000;
 }
+
+main {
+    padding-left: 30px;
+    padding-right: 30px;
+}
