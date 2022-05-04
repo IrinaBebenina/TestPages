@@ -8,6 +8,9 @@
         {% render 'logo' %}
         {%- if section.settings.logo_position == 'right' -%}
           {% style %}
+            .header {
+              background-color: red;
+            }
             .logo-container {
               order: 1;
             }
