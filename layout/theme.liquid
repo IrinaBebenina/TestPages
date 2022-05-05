@@ -132,7 +132,7 @@
 	  
 		  {% endstyle %}
 		  
-		  {%- if settings.header_position == 'left' -%}
+		  {%- if settings.header_type == 'vertical_top' or settings.header_type == 'vertical_stretched' or settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' -%}
 			{% style %}
 				body {
 					display: grid;
@@ -155,14 +155,13 @@
 				.logo-container {
 					display: none;
 				}
-                 main ~ .logo {
+                main ~ .logo {
                     position: sticky;
                     height: 100vh;
                     top: 0;
                     right: 0;
                     padding: 10px;
                     background-color: grey;
-                   
                 }
 				.logo_title {
 					transform: rotate(90deg) translateX(50%);
