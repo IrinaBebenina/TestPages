@@ -1,4 +1,4 @@
-{%- if settings.header_position == 'left' -%}
+{%- if settings.header_type == 'vertical_top' or settings.header_type == 'vertical_stretched' or settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' -%}
   {{ 'header-vertical.css' | asset_url | stylesheet_tag }}
 {%- else -%}
   {{ 'header.css' | asset_url | stylesheet_tag }}
