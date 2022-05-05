@@ -140,7 +140,6 @@
 			{{ content_for_layout }}
 		</main>
 		{% unless settings.header_type == 'horizontal' %}
-			{% render 'logo' %}
 			{% style %}
 				body {
 					display: grid;
@@ -174,7 +173,14 @@
 					justify-content: flex-start;
 				}
 			{% endstyle %}
-		{% elsif settings.header_type == 'vertical_stretched' or settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' %}
+		{%- elsif settings.header_type == 'vertical_stretched' -%}
+			{% style %}
+				.header {
+					justify-content: space-between;
+				}
+			{% endstyle %}
+		{%- elsif settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' -%}	
+			{% render 'logo' %}
 			{% style %}
 				.logo-container {
 					display: none;
