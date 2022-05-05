@@ -855,7 +855,7 @@
     "header": {
       "name": "Header",
       "settings": {
-        "header_position": {
+        "header_type": {
           "label": "Desktop header type",
           "options__1": {
             "label": "Horizontal header"
