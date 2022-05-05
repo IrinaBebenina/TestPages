@@ -149,9 +149,12 @@
 		<main>
 			{{ content_for_layout }}
 		</main>
-		{%- if settings.header_position == 'left' and settings.logo_position == 'outside_header' -%}
+		{%- if settings.header_type == 'vertical_top' or settings.header_type == 'vertical_stretched' or settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' -%}
 			{% render 'logo' %}
 			{% style %}
+				.logo-container {
+					display: none;
+				}
                  main ~ .logo {
                     position: sticky;
                     height: 100vh;
