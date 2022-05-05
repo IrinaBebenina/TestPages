@@ -122,12 +122,7 @@
                 "heading": "Cart",
                 "menu": "header"
               }
-            },
-            "block_order": [
-              "logo",
-              "navigation",
-              "cart"
-            ]
+            }
           }
         }
       }
