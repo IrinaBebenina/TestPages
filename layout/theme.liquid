@@ -131,16 +131,6 @@
 			}*/
 	  
 		  {% endstyle %}
-		  
-		  {%- if settings.header_type == 'vertical_top' or settings.header_type == 'vertical_stretched' or settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' -%}
-			{% style %}
-				body {
-					display: grid;
-					grid-template-columns: auto auto auto;
-					/*height: 100%;*/
-				}
-			{% endstyle %}
-		  {%- endif -%}
 
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
@@ -149,13 +139,49 @@
 		<main>
 			{{ content_for_layout }}
 		</main>
-		{%- if settings.header_type == 'vertical_top' or settings.header_type == 'vertical_stretched' or settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' -%}
+		{% unless settings.header_type == 'horizontal' %}
 			{% render 'logo' %}
+			{% style %}
+				body {
+					display: grid;
+					grid-template-columns: auto auto auto;
+					/*height: 100%;*/
+				}
+				.section-header {
+					height: 100vh;
+				}
+				.header {
+					flex-direction: column;
+					gap: 20px;
+					padding: 10px;
+					height: 100%;
+					max-width: 150px;
+				}
+				header nav {
+					width: 100%;
+				}
+				.header__menu {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					gap: 10px;
+				}
+			{% endstyle %}
+		{% endunless %}
+		{%- if settings.header_type == 'vertical_top' -%}
+			{% style %}
+				.header {
+					justify-content: flex-start;
+				}
+			{% endstyle %}
+		{% elsif settings.header_type == 'vertical_stretched' or settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' %}
 			{% style %}
 				.logo-container {
 					display: none;
 				}
                 main ~ .logo {
+					display: flex;
+					align-items: flex-start;
                     position: sticky;
                     height: 100vh;
                     top: 0;
