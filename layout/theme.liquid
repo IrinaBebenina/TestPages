@@ -179,7 +179,7 @@
 					justify-content: space-between;
 				}
 			{% endstyle %}
-		{%- elsif settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' -%}	
+		{%- elsif settings.header_type == 'vertical_right_top_logo' or settings.header_type == 'vertical_right_middle_logo' -%}
 			{% render 'logo' %}
 			{% style %}
 				.logo-container {
@@ -187,7 +187,6 @@
 				}
                 main ~ .logo {
 					display: flex;
-					align-items: flex-start;
                     position: sticky;
                     height: 100vh;
                     top: 0;
@@ -199,6 +198,18 @@
 					transform: rotate(90deg) translateX(50%);
 				}
             {% endstyle %}
+		{%- elsif settings.header_type == 'vertical_right_top_logo' -%}
+			{% style %}
+				main ~ .logo {
+					align-items: flex-start;
+				}
+			{% endstyle %}
+		{%- elsif settings.header_type == 'vertical_right_middle_logo' -%}	
+			{% style %}
+				main ~ .logo {
+					align-items: center;
+				}
+			{% endstyle %}
 		{%- endif -%}
 	</body>
 <html>
