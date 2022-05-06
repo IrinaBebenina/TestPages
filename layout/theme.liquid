@@ -135,8 +135,14 @@
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 	</head>	
 	<body>
-		{% section 'header' %}
+		{% if settings.header_type == 'horizontal' %}
+			{% section 'header' %}
+		{% endif %}
+		{% section 'banner' %}
 		<main>
+			{% unless settings.header_type == 'horizontal' %}
+				{% section 'header' %}
+			{% endunless %}
 			{{ content_for_layout }}
 		</main>
 		{% unless settings.header_type == 'horizontal' %}
@@ -148,6 +154,7 @@
 				}
 				.section-header {
 					height: 100vh;
+					left: 0;
 				}
 				.header {
 					flex-direction: column;
