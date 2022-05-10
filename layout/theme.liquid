@@ -149,6 +149,7 @@
 		<div class="grid-layout">
           	{% section 'banner' %}
 			{% unless settings.header_type == 'horizontal' %}
+          <div class="container-for-header">
           		{% section 'header' %}
 				{% style %}
 					.grid-layout {
@@ -156,6 +157,8 @@
      					grid-template-areas: 'banner banner' 'header main';
 					}
 				{% endstyle %}
+          </div>
+          		
 			{% endunless %}
           	{% unless settings.header_type == 'horizontal' %}
 				{% style %}
