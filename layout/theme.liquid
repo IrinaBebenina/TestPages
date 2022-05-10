@@ -141,7 +141,8 @@
 		
 		<div class="grid-layout">
 			{% unless settings.header_type == 'horizontal' %}
-				{% section 'header' %}
+				{% section 'banner' %}
+          		{% section 'header' %}
 				{% style %}
 					.grid-layout {
 						display: grid;
@@ -154,7 +155,6 @@
           			}
 				{% endstyle %}
 			{% endunless %}
-          	{% section 'banner' %}
           	{% unless settings.header_type == 'horizontal' %}
 				{% style %}
 					.banner {
