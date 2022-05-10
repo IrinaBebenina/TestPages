@@ -149,8 +149,8 @@
 					}
 				{% endstyle %}
 			{% endunless %}
+          	{% section 'banner' %}
 			<main>
-              	{% section 'banner' %}
 				{{ content_for_layout }}
 			</main>
 			{% unless settings.header_type == 'horizontal' %}
