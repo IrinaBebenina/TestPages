@@ -148,15 +148,12 @@
 						display: grid;
 						grid-template-columns: auto auto auto;
 					}
-          			.section-header {
-          				grid-area: header;
-          			}
 				{% endstyle %}
 			{% endunless %}
           	{% unless settings.header_type == 'horizontal' %}
 				{% style %}
 					#shopify-section-banner {
-						grid-area: banner;
+						grid-area: 1 / 1 / 2 / 3;
 					}
 				{% endstyle %}
 			{% endunless %}
@@ -172,9 +169,6 @@
                        "header  main";
 					height: 100%;
 				}*/
-          		.main {
-          			grid-area: main;
-          		}
 				.section-header {
 					height: 100vh;
 					left: 0;
