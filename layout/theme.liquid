@@ -146,10 +146,19 @@
 					.grid-layout {
 						display: grid;
 						grid-template-columns: auto auto auto;
+          				grid-template-areas: "banner"
+                       						 "header  main";
 					}
 				{% endstyle %}
 			{% endunless %}
           	{% section 'banner' %}
+          	{% unless settings.header_type == 'horizontal' %}
+				{% style %}
+					.banner {
+						grid-area: banner;
+					}
+				{% endstyle %}
+			{% endunless %}
 			<main>
 				{{ content_for_layout }}
 			</main>
@@ -157,7 +166,9 @@
 			{% style %}
 				/*main {
 					display: grid;
-					grid-template-columns: auto auto auto;
+          			grid-template-columns: auto auto auto;
+					grid-template-areas: "banner"
+                       "header  main";
 					height: 100%;
 				}*/
 				.section-header {
