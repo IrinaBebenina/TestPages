@@ -138,7 +138,7 @@
 		{% if settings.header_type == 'horizontal' %}
 			{% section 'header' %}
 		{% endif %}
-		{% section 'banner' %}
+		
 		<div class="grid-layout">
 			{% unless settings.header_type == 'horizontal' %}
 				{% section 'header' %}
@@ -150,6 +150,7 @@
 				{% endstyle %}
 			{% endunless %}
 			<main>
+              	{% section 'banner' %}
 				{{ content_for_layout }}
 			</main>
 			{% unless settings.header_type == 'horizontal' %}
