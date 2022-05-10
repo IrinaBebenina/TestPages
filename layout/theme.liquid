@@ -140,8 +140,8 @@
 		{% endif %}
 		
 		<div class="grid-layout">
+          	{% section 'banner' %}
 			{% unless settings.header_type == 'horizontal' %}
-				{% section 'banner' %}
           		{% section 'header' %}
 				{% style %}
 					.grid-layout {
