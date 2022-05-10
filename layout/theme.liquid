@@ -139,19 +139,21 @@
 			{% section 'header' %}
 		{% endif %}
 		{% section 'banner' %}
-		<main>
+		<div class="grid-layout">
 			{% unless settings.header_type == 'horizontal' %}
 				{% section 'header' %}
 			{% endunless %}
-			{{ content_for_layout }}
-		</main>
+			<main>
+				{{ content_for_layout }}
+			</main>
+		</div>
 		{% unless settings.header_type == 'horizontal' %}
 			{% style %}
-				main {
+				/*main {
 					display: grid;
 					grid-template-columns: auto auto auto;
-					/*height: 100%;*/
-				}
+					height: 100%;
+				}*/
 				.section-header {
 					height: 100vh;
 					left: 0;

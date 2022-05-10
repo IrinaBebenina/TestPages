@@ -18,3 +18,8 @@ main {
     padding-left: 30px;
     padding-right: 30px;
 }
+
+.grid-layout {
+    display: grid;
+	grid-template-columns: auto auto auto;
+}
