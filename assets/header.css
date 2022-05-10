@@ -1,7 +1,6 @@
-/*.section-header {
-    position: sticky;
-    top: 0;
-}*/
+.section-header {
+    grid-area: header;
+}
 
 .header {
     background-color: grey;
