@@ -137,6 +137,12 @@
 	<body>
 		{% if settings.header_type == 'horizontal' %}
 			{% section 'header' %}
+      		{% style %}
+                .section-header {
+                    position: sticky;
+                    top: 0;
+                }
+			{% endstyle %}
 		{% endif %}
 		
 		<div class="grid-layout">
