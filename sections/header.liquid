@@ -31,23 +31,11 @@
 {% schema %}
 {
   "name": "t:sections.header.name",
-  "class": "section-header",
+  "max_blocks": 12,
   "blocks": [
     {
       "type": "logo",
-      "name": "Logo",
-      "settings": [
-        {
-          "id": "logourl",
-          "type": "url",
-          "label": "Logo url"
-        },
-        {
-          "id": "logotext",
-          "type": "text",
-          "label": "Logo text"
-        }
-      ]
+      "name": "t:sections.header.blocks.logo.name"
     },
     {
       "type": "navigation",
@@ -71,6 +59,16 @@
         }
       ]
     }
-  ]
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "logo"
+      },
+      {
+        "type": "cart"
+      }
+    ]
+  }
 }
 {% endschema %}
