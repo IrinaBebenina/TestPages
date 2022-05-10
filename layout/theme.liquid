@@ -225,10 +225,15 @@
 			{%- elsif settings.header_type == 'vertical_right_top_logo' -%}
 				{% render 'logo' %}
 				{% style %}
+          			.grid-layout {
+						display: grid;
+     					grid-template-areas: 'banner banner banner' 'header main logo';
+					}
 					.logo-container {
 						display: none;
 					}
 					main ~ .logo {
+          				grid-area: logo;
 						display: flex;
 						justify-content: center;
 						position: sticky;
