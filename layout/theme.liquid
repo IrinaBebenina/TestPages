@@ -146,8 +146,7 @@
 			<main>
 				{{ content_for_layout }}
 			</main>
-		</div>
-		{% unless settings.header_type == 'horizontal' %}
+			{% unless settings.header_type == 'horizontal' %}
 			{% style %}
 				/*main {
 					display: grid;
@@ -175,61 +174,62 @@
 					gap: 10px;
 				}
 			{% endstyle %}
-		{% endunless %}
-		{%- if settings.header_type == 'vertical_top' -%}
-			{% style %}
-				.header {
-					justify-content: flex-start;
-				}
-			{% endstyle %}
-		{%- elsif settings.header_type == 'vertical_stretched' -%}
-			{% style %}
-				.header {
-					justify-content: space-between;
-				}
-			{% endstyle %}
-		{%- elsif settings.header_type == 'vertical_right_top_logo' -%}
-			{% render 'logo' %}
-			{% style %}
-				.logo-container {
-					display: none;
-				}
-				main ~ .logo {
-					display: flex;
-					justify-content: center;
-					position: sticky;
-					align-items: flex-start;
-					height: 100vh;
-					top: 0;
-					right: 0;
-					padding: 10px;
-					background-color: grey;
-				}
-				.logo_title {
-					transform: rotate(90deg) translateX(50%);
-				}
-			{% endstyle %}
-		{%- elsif settings.header_type == 'vertical_right_middle_logo' -%}	
-			{% render 'logo' %}
-			{% style %}
-				.logo-container {
-					display: none;
-				}
-				main ~ .logo {
-					display: flex;
-					justify-content: center;
-					position: sticky;
-					align-items: center;
-					height: 100vh;
-					top: 0;
-					right: 0;
-					padding: 10px;
-					background-color: grey;
-				}
-				.logo_title {
-					transform: rotate(90deg);
-				}
-			{% endstyle %}
-		{%- endif -%}
+			{% endunless %}
+			{%- if settings.header_type == 'vertical_top' -%}
+				{% style %}
+					.header {
+						justify-content: flex-start;
+					}
+				{% endstyle %}
+			{%- elsif settings.header_type == 'vertical_stretched' -%}
+				{% style %}
+					.header {
+						justify-content: space-between;
+					}
+				{% endstyle %}
+			{%- elsif settings.header_type == 'vertical_right_top_logo' -%}
+				{% render 'logo' %}
+				{% style %}
+					.logo-container {
+						display: none;
+					}
+					main ~ .logo {
+						display: flex;
+						justify-content: center;
+						position: sticky;
+						align-items: flex-start;
+						height: 100vh;
+						top: 0;
+						right: 0;
+						padding: 10px;
+						background-color: grey;
+					}
+					.logo_title {
+						transform: rotate(90deg) translateX(50%);
+					}
+				{% endstyle %}
+			{%- elsif settings.header_type == 'vertical_right_middle_logo' -%}	
+				{% render 'logo' %}
+				{% style %}
+					.logo-container {
+						display: none;
+					}
+					main ~ .logo {
+						display: flex;
+						justify-content: center;
+						position: sticky;
+						align-items: center;
+						height: 100vh;
+						top: 0;
+						right: 0;
+						padding: 10px;
+						background-color: grey;
+					}
+					.logo_title {
+						transform: rotate(90deg);
+					}
+				{% endstyle %}
+			{%- endif -%}
+		</div>
 	</body>
 <html>
